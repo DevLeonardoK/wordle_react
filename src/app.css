@@ -1,0 +1,22 @@
+input {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  background-color: #4d4346;
+  border-radius: 10px;
+  text-align: center;
+  border: none;
+  font-family: "Mitr";
+  font-size: 40px;
+  text-transform: uppercase;
+  cursor: crosshair;
+  max-lines: 0;
+}
+
+input:focus {
+  outline: none;
+  background-color: #fff;
+  transition: 0.35s;
+  border: none;
+}
