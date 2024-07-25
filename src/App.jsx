@@ -5,45 +5,45 @@ const styleBackgroundContainer = {
   width: "100vw",
   height: "100vh",
   display: "flex",
-  "justify-content": "center",
-  "align-items": "center",
-  "flex-direction": "column",
-  "text-align": "center",
+  justifyContent: "center",
+  alignItems: "center",
+  flexDirection: "column",
+  textAlign: "center",
 };
 
 const styleTitle = {
-  "font-family": "Mitr",
+  fontFamily: "Mitr",
   color: "white",
-  "letter-spacing": 5,
-  "font-weight": "600",
-  "font-size": 45,
-  "text-decoration": "underline",
+  letterSpacing: 5,
+  fontWeight: 600,
+  fontSize: 45,
+  textDecoration: "underline",
 };
 
 const styleArea = {
   width: 430,
   height: 650,
   display: "flex",
-  "justify-content": "center",
-  "flex-direction": "column",
-  "align-items": "center",
+  justifyContent: "center",
+  flexDirection: "column",
+  alignItems: "center",
 };
 
 const styleRow = {
   width: 410,
   height: 100,
   display: "flex",
-  "justify-content": "center",
-  "align-items": "center",
+  justifyContent: "center",
+  alignItems: "center",
   gap: 10,
 };
 
 const styleBtn = {
-  width: 100,
-  height: 100,
+  width: 70,
+  height: 50,
   display: "flex",
-  "justify-content": "center",
-  "align-items": "center",
+  justifyContent: "center",
+  alignItems: "center",
 };
 
 const App = () => {
@@ -820,42 +820,40 @@ const App = () => {
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
 
-    for (let i = 0; i < palavraSorteada.length; i += 1) {
-      if (s1.value === palavraSorteada[0]) {
-        s1.style.backgroundColor = "green";
-      } else if (palavraSorteada[i] === s1.value) {
-        s1.style.backgroundColor = "yellow";
-      } else {
-        s1.style.backgroundColor = "red";
-      }
+    if (palavraSorteada[0] !== s1.value && palavraSorteada.includes(s1.value)) {
+      s1.style.backgroundColor = "yellow";
+    } else if (s1.value === palavraSorteada[0]) {
+      s1.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s1.value)) {
+      s1.style.backgroundColor = "red";
     }
 
-    if (s2.value === palavraSorteada[1]) {
-      s2.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s2.value)) {
+    if (palavraSorteada[1] !== s2.value && palavraSorteada.includes(s2.value)) {
       s2.style.backgroundColor = "yellow";
-    } else {
+    } else if (s2.value === palavraSorteada[1]) {
+      s2.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s2.value)) {
       s2.style.backgroundColor = "red";
     }
-    if (s3.value === palavraSorteada[2]) {
-      s3.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s3.value)) {
+    if (palavraSorteada[2] !== s3.value && palavraSorteada.includes(s3.value)) {
       s3.style.backgroundColor = "yellow";
-    } else {
+    } else if (s3.value === palavraSorteada[2]) {
+      s3.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s3.value)) {
       s3.style.backgroundColor = "red";
     }
-    if (s4.value === palavraSorteada[3]) {
-      s4.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s4.value)) {
+    if (palavraSorteada[3] !== s4.value && palavraSorteada.includes(s4.value)) {
       s4.style.backgroundColor = "yellow";
-    } else {
+    } else if (s4.value === palavraSorteada[3]) {
+      s4.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s4.value)) {
       s4.style.backgroundColor = "red";
     }
-    if (s5.value === palavraSorteada[4]) {
-      s5.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s5.value)) {
+    if (palavraSorteada[4] !== s5.value && palavraSorteada.includes(s5.value)) {
       s5.style.backgroundColor = "yellow";
-    } else {
+    } else if (s5.value === palavraSorteada[4]) {
+      s5.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s5.value)) {
       s5.style.backgroundColor = "red";
     }
     s1.readOnly = "readOnly";
@@ -863,6 +861,16 @@ const App = () => {
     s3.readOnly = "readOnly";
     s4.readOnly = "readOnly";
     s5.readOnly = "readOnly";
+
+    if (
+      s1.value === palavraSorteada[0] &&
+      s2.value === palavraSorteada[1] &&
+      s3.value === palavraSorteada[2] &&
+      s4.value === palavraSorteada[3] &&
+      s5.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
 
   function secondLine() {
@@ -872,39 +880,43 @@ const App = () => {
     const s9 = document.getElementById("9");
     const s10 = document.getElementById("10");
 
-    if (s6.value === palavraSorteada[0]) {
-      s6.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s6.value)) {
+    if (palavraSorteada[0] !== s6.value && palavraSorteada.includes(s6.value)) {
       s6.style.backgroundColor = "yellow";
-    } else {
+    } else if (s6.value === palavraSorteada[0]) {
+      s6.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s6.value)) {
       s6.style.backgroundColor = "red";
     }
-    if (s7.value === palavraSorteada[1]) {
-      s7.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s7.value)) {
+
+    if (palavraSorteada[1] !== s7.value && palavraSorteada.includes(s7.value)) {
       s7.style.backgroundColor = "yellow";
-    } else {
+    } else if (s7.value === palavraSorteada[1]) {
+      s7.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s7.value)) {
       s7.style.backgroundColor = "red";
     }
-    if (s8.value === palavraSorteada[2]) {
-      s8.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s8.value)) {
+    if (palavraSorteada[2] !== s8.value && palavraSorteada.includes(s8.value)) {
       s8.style.backgroundColor = "yellow";
-    } else {
+    } else if (s8.value === palavraSorteada[2]) {
+      s8.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s8.value)) {
       s8.style.backgroundColor = "red";
     }
-    if (s9.value === palavraSorteada[3]) {
-      s9.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s9.value)) {
+    if (palavraSorteada[3] !== s9.value && palavraSorteada.includes(s9.value)) {
       s9.style.backgroundColor = "yellow";
-    } else {
+    } else if (s9.value === palavraSorteada[3]) {
+      s9.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s9.value)) {
       s9.style.backgroundColor = "red";
     }
-    if (s10.value === palavraSorteada[4]) {
-      s10.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s10.value)) {
+    if (
+      palavraSorteada[4] !== s10.value &&
+      palavraSorteada.includes(s10.value)
+    ) {
       s10.style.backgroundColor = "yellow";
-    } else {
+    } else if (s10.value === palavraSorteada[4]) {
+      s10.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s10.value)) {
       s10.style.backgroundColor = "red";
     }
     s6.readOnly = "readOnly";
@@ -912,6 +924,15 @@ const App = () => {
     s8.readOnly = "readOnly";
     s9.readOnly = "readOnly";
     s10.readOnly = "readOnly";
+    if (
+      s6.value === palavraSorteada[0] &&
+      s7.value === palavraSorteada[1] &&
+      s8.value === palavraSorteada[2] &&
+      s9.value === palavraSorteada[3] &&
+      s10.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
   function terceiraLine() {
     const s11 = document.getElementById("11");
@@ -919,39 +940,54 @@ const App = () => {
     const s13 = document.getElementById("13");
     const s14 = document.getElementById("14");
     const s15 = document.getElementById("15");
-    if (s11.value === palavraSorteada[0]) {
-      s11.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s11.value)) {
+    if (
+      palavraSorteada[0] !== s11.value &&
+      palavraSorteada.includes(s11.value)
+    ) {
       s11.style.backgroundColor = "yellow";
-    } else {
+    } else if (s11.value === palavraSorteada[0]) {
+      s11.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s11.value)) {
       s11.style.backgroundColor = "red";
     }
-    if (s12.value === palavraSorteada[1]) {
-      s12.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s12.value)) {
+    if (
+      palavraSorteada[1] !== s12.value &&
+      palavraSorteada.includes(s12.value)
+    ) {
       s12.style.backgroundColor = "yellow";
-    } else {
+    } else if (s12.value === palavraSorteada[1]) {
+      s12.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s12.value)) {
       s12.style.backgroundColor = "red";
     }
-    if (s13.value === palavraSorteada[2]) {
-      s13.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s13.value)) {
+    if (
+      palavraSorteada[2] !== s13.value &&
+      palavraSorteada.includes(s13.value)
+    ) {
       s13.style.backgroundColor = "yellow";
-    } else {
+    } else if (s13.value === palavraSorteada[2]) {
+      s13.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s13.value)) {
       s13.style.backgroundColor = "red";
     }
-    if (s14.value === palavraSorteada[3]) {
-      s14.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s14.value)) {
+    if (
+      palavraSorteada[3] !== s14.value &&
+      palavraSorteada.includes(s14.value)
+    ) {
       s14.style.backgroundColor = "yellow";
-    } else {
+    } else if (s14.value === palavraSorteada[3]) {
+      s14.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s14.value)) {
       s14.style.backgroundColor = "red";
     }
-    if (s15.value === palavraSorteada[4]) {
-      s15.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s15.value)) {
+    if (
+      palavraSorteada[4] !== s15.value &&
+      palavraSorteada.includes(s15.value)
+    ) {
       s15.style.backgroundColor = "yellow";
-    } else {
+    } else if (s15.value === palavraSorteada[4]) {
+      s15.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s15.value)) {
       s15.style.backgroundColor = "red";
     }
     s11.readOnly = "readOnly";
@@ -959,6 +995,15 @@ const App = () => {
     s13.readOnly = "readOnly";
     s14.readOnly = "readOnly";
     s15.readOnly = "readOnly";
+    if (
+      s11.value === palavraSorteada[0] &&
+      s12.value === palavraSorteada[1] &&
+      s13.value === palavraSorteada[2] &&
+      s14.value === palavraSorteada[3] &&
+      s15.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
   function quartaLine() {
     const s16 = document.getElementById("16");
@@ -966,39 +1011,54 @@ const App = () => {
     const s18 = document.getElementById("18");
     const s19 = document.getElementById("19");
     const s20 = document.getElementById("20");
-    if (s16.value === palavraSorteada[0]) {
-      s16.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s16.value)) {
+    if (
+      palavraSorteada[0] !== s16.value &&
+      palavraSorteada.includes(s16.value)
+    ) {
       s16.style.backgroundColor = "yellow";
-    } else {
+    } else if (s16.value === palavraSorteada[0]) {
+      s16.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s16.value)) {
       s16.style.backgroundColor = "red";
     }
-    if (s17.value === palavraSorteada[1]) {
-      s17.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s17.value)) {
+    if (
+      palavraSorteada[1] !== s17.value &&
+      palavraSorteada.includes(s17.value)
+    ) {
       s17.style.backgroundColor = "yellow";
-    } else {
+    } else if (s17.value === palavraSorteada[1]) {
+      s17.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s17.value)) {
       s17.style.backgroundColor = "red";
     }
-    if (s18.value === palavraSorteada[2]) {
-      s18.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s18.value)) {
+    if (
+      palavraSorteada[2] !== s18.value &&
+      palavraSorteada.includes(s18.value)
+    ) {
       s18.style.backgroundColor = "yellow";
-    } else {
+    } else if (s18.value === palavraSorteada[2]) {
+      s18.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s18.value)) {
       s18.style.backgroundColor = "red";
     }
-    if (s19.value === palavraSorteada[3]) {
-      s19.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s19.value)) {
+    if (
+      palavraSorteada[3] !== s19.value &&
+      palavraSorteada.includes(s19.value)
+    ) {
       s19.style.backgroundColor = "yellow";
-    } else {
+    } else if (s19.value === palavraSorteada[3]) {
+      s19.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s19.value)) {
       s19.style.backgroundColor = "red";
     }
-    if (s20.value === palavraSorteada[4]) {
-      s20.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s20.value)) {
+    if (
+      palavraSorteada[4] !== s20.value &&
+      palavraSorteada.includes(s20.value)
+    ) {
       s20.style.backgroundColor = "yellow";
-    } else {
+    } else if (s20.value === palavraSorteada[4]) {
+      s20.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s20.value)) {
       s20.style.backgroundColor = "red";
     }
     s16.readOnly = "readOnly";
@@ -1006,6 +1066,15 @@ const App = () => {
     s18.readOnly = "readOnly";
     s19.readOnly = "readOnly";
     s20.readOnly = "readOnly";
+    if (
+      s16.value === palavraSorteada[0] &&
+      s17.value === palavraSorteada[1] &&
+      s18.value === palavraSorteada[2] &&
+      s19.value === palavraSorteada[3] &&
+      s20.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
   function quintaLine() {
     const s21 = document.getElementById("21");
@@ -1013,39 +1082,54 @@ const App = () => {
     const s23 = document.getElementById("23");
     const s24 = document.getElementById("24");
     const s25 = document.getElementById("25");
-    if (s21.value === palavraSorteada[0]) {
-      s21.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s21.value)) {
+    if (
+      palavraSorteada[0] !== s21.value &&
+      palavraSorteada.includes(s21.value)
+    ) {
       s21.style.backgroundColor = "yellow";
-    } else {
+    } else if (s21.value === palavraSorteada[0]) {
+      s21.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s21.value)) {
       s21.style.backgroundColor = "red";
     }
-    if (s22.value === palavraSorteada[1]) {
-      s22.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s22.value)) {
+    if (
+      palavraSorteada[1] !== s22.value &&
+      palavraSorteada.includes(s22.value)
+    ) {
       s22.style.backgroundColor = "yellow";
-    } else {
+    } else if (s22.value === palavraSorteada[1]) {
+      s22.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s22.value)) {
       s22.style.backgroundColor = "red";
     }
-    if (s23.value === palavraSorteada[2]) {
-      s23.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s23.value)) {
+    if (
+      palavraSorteada[2] !== s23.value &&
+      palavraSorteada.includes(s23.value)
+    ) {
       s23.style.backgroundColor = "yellow";
-    } else {
+    } else if (s23.value === palavraSorteada[2]) {
+      s23.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s23.value)) {
       s23.style.backgroundColor = "red";
     }
-    if (s24.value === palavraSorteada[3]) {
-      s24.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s24.value)) {
+    if (
+      palavraSorteada[3] !== s24.value &&
+      palavraSorteada.includes(s24.value)
+    ) {
       s24.style.backgroundColor = "yellow";
-    } else {
+    } else if (s24.value === palavraSorteada[3]) {
+      s24.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s24.value)) {
       s24.style.backgroundColor = "red";
     }
-    if (s25.value === palavraSorteada[4]) {
-      s25.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s25.value)) {
+    if (
+      palavraSorteada[4] !== s25.value &&
+      palavraSorteada.includes(s25.value)
+    ) {
       s25.style.backgroundColor = "yellow";
-    } else {
+    } else if (s25.value === palavraSorteada[4]) {
+      s25.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s25.value)) {
       s25.style.backgroundColor = "red";
     }
     s21.readOnly = "readOnly";
@@ -1053,6 +1137,15 @@ const App = () => {
     s23.readOnly = "readOnly";
     s24.readOnly = "readOnly";
     s25.readOnly = "readOnly";
+    if (
+      s21.value === palavraSorteada[0] &&
+      s22.value === palavraSorteada[1] &&
+      s23.value === palavraSorteada[2] &&
+      s24.value === palavraSorteada[3] &&
+      s25.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
   function sextaLine() {
     const s26 = document.getElementById("26");
@@ -1060,39 +1153,54 @@ const App = () => {
     const s28 = document.getElementById("28");
     const s29 = document.getElementById("29");
     const s30 = document.getElementById("30");
-    if (s26.value === palavraSorteada[0]) {
-      s26.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s26.value)) {
+    if (
+      palavraSorteada[0] !== s26.value &&
+      palavraSorteada.includes(s26.value)
+    ) {
       s26.style.backgroundColor = "yellow";
-    } else {
+    } else if (s26.value === palavraSorteada[0]) {
+      s26.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s26.value)) {
       s26.style.backgroundColor = "red";
     }
-    if (s27.value === palavraSorteada[1]) {
-      s27.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s27.value)) {
+    if (
+      palavraSorteada[1] !== s27.value &&
+      palavraSorteada.includes(s27.value)
+    ) {
       s27.style.backgroundColor = "yellow";
-    } else {
+    } else if (s27.value === palavraSorteada[1]) {
+      s27.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s27.value)) {
       s27.style.backgroundColor = "red";
     }
-    if (s28.value === palavraSorteada[2]) {
-      s28.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s28.value)) {
+    if (
+      palavraSorteada[2] !== s28.value &&
+      palavraSorteada.includes(s28.value)
+    ) {
       s28.style.backgroundColor = "yellow";
-    } else {
+    } else if (s28.value === palavraSorteada[2]) {
+      s28.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s28.value)) {
       s28.style.backgroundColor = "red";
     }
-    if (s29.value === palavraSorteada[3]) {
-      s29.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s29.value)) {
+    if (
+      palavraSorteada[3] !== s29.value &&
+      palavraSorteada.includes(s29.value)
+    ) {
       s29.style.backgroundColor = "yellow";
-    } else {
+    } else if (s29.value === palavraSorteada[3]) {
+      s29.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s29.value)) {
       s29.style.backgroundColor = "red";
     }
-    if (s30.value === palavraSorteada[4]) {
-      s30.style.backgroundColor = "green";
-    } else if (palavraSorteada.includes(s30.value)) {
+    if (
+      palavraSorteada[4] !== s30.value &&
+      palavraSorteada.includes(s30.value)
+    ) {
       s30.style.backgroundColor = "yellow";
-    } else {
+    } else if (s30.value === palavraSorteada[4]) {
+      s30.style.backgroundColor = "green";
+    } else if (!palavraSorteada.includes(s30.value)) {
       s30.style.backgroundColor = "red";
     }
     s26.readOnly = "readOnly";
@@ -1100,6 +1208,15 @@ const App = () => {
     s28.readOnly = "readOnly";
     s29.readOnly = "readOnly";
     s30.readOnly = "readOnly";
+    if (
+      s26.value === palavraSorteada[0] &&
+      s27.value === palavraSorteada[1] &&
+      s28.value === palavraSorteada[2] &&
+      s29.value === palavraSorteada[3] &&
+      s30.value === palavraSorteada[4]
+    ) {
+      console.log("PARABENS JOGOS FINALIZADOS");
+    }
   }
 
   return (
@@ -1108,27 +1225,29 @@ const App = () => {
         <h1 className="title" style={styleTitle}>
           TERMO
         </h1>
-        <button onClick={firstLine} style={styleBtn}>
-          Primeira Linha
-        </button>
-        <button onClick={secondLine} style={styleBtn}>
-          Segunda Linha
-        </button>
-        <button onClick={terceiraLine} style={styleBtn}>
-          Terceira Linha
-        </button>
-        <button onClick={quartaLine} style={styleBtn}>
-          Quarta Linha
-        </button>
-        <button onClick={quintaLine} style={styleBtn}>
-          Quinta Linha
-        </button>
-        <button onClick={sextaLine} style={styleBtn}>
-          Sexta Linha
-        </button>
-        <button onClick={mostrar} style={styleBtn}>
-          Mostrar
-        </button>
+        <div className="buttons">
+          <button onClick={firstLine} style={styleBtn}>
+            Primeira Linha
+          </button>
+          <button onClick={secondLine} style={styleBtn}>
+            Segunda Linha
+          </button>
+          <button onClick={terceiraLine} style={styleBtn}>
+            Terceira Linha
+          </button>
+          <button onClick={quartaLine} style={styleBtn}>
+            Quarta Linha
+          </button>
+          <button onClick={quintaLine} style={styleBtn}>
+            Quinta Linha
+          </button>
+          <button onClick={sextaLine} style={styleBtn}>
+            Sexta Linha
+          </button>
+          <button onClick={mostrar} style={styleBtn}>
+            Mostrar
+          </button>
+        </div>
 
         <div className="container-area-app" style={styleArea}>
           <div className="row-area" style={styleRow}>

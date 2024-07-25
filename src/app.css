@@ -20,3 +20,12 @@ input:focus {
   transition: 0.35s;
   border: none;
 }
+
+.buttons {
+  width: 100vw;
+  height: 110px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: row;
+}
