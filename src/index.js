@@ -3,7 +3,6 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const body = document.getElementById("body");
-const app = document.getElementById("root");
 body.style.margin = 0;
 body.style.boxSizing = "border-box";
 body.style.padding = 0;
