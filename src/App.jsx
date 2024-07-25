@@ -811,9 +811,19 @@ const App = () => {
   ];
   let sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].split("");
+  for (let i = 0; i < palavraSorteada.length; i++) {
+    const total = palavraSorteada.filter(
+      (x) => x === palavraSorteada[i]
+    ).length;
+    if (total > 1) {
+      var letraRepetida = palavraSorteada[i];
+      console.log(letraRepetida, "=== essa letra repete: ", total, " vezes");
+    }
+  }
 
   function firstLine() {
     // const total = [s1.value, s2.value, s3.value, s4.value, s5.value];
+
     const s1 = document.getElementById("1");
     const s2 = document.getElementById("2");
     const s3 = document.getElementById("3");
