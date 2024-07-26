@@ -21,15 +21,6 @@ const styleTitle = {
   textDecoration: "underline",
 };
 
-const styleArea = {
-  width: 430,
-  height: 650,
-  display: "flex",
-  justifyContent: "center",
-  flexDirection: "column",
-  alignItems: "center",
-};
-
 const styleRow = {
   width: 410,
   height: 100,
@@ -819,6 +810,10 @@ const App = () => {
     "p",
   ];
 
+  const letraSegundaLinha = ["a", "s", "d", "f", "g", "h", "j", "k", "l", "ç"];
+
+  const letrasTerceiraLinha = ["z", "x", "c", "v", "b", "n", "m"];
+
   let sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].split("");
 
@@ -834,13 +829,22 @@ const App = () => {
       );
     }
   }
+
   useEffect(() => {
-    letrasPrimeiraLinha.forEach((letter) => {
-      const btn = document.createElement("button");
-      const buttons = document.querySelector("#buttons");
-      btn.textContent = letter;
-      buttons.append(btn);
-    });
+    var letraLinhas = (linhaPosition, letter) => {
+      linhaPosition.forEach((letter) => {
+        var btn = document.createElement("button");
+        var lettersArea = document.querySelector("#letter-area");
+        btn.setAttribute("class", "buttons-letters");
+        btn.textContent = letter;
+        btn.setAttribute("value", letter);
+        lettersArea.append(btn);
+      });
+    };
+
+    letraLinhas(letrasPrimeiraLinha);
+    letraLinhas(letraSegundaLinha);
+    letraLinhas(letrasTerceiraLinha);
   });
   function mostrar() {
     console.log(palavraSorteada);
@@ -1288,7 +1292,7 @@ const App = () => {
           </button>
         </div>
 
-        <div className="container-area-app" style={styleArea}>
+        <div className="container-area-app">
           <div className="row-area" style={styleRow}>
             <input type="text" className="input" id="1"></input>
             <input type="text" className="input" id="2"></input>
@@ -1332,6 +1336,7 @@ const App = () => {
             <input type="text" className="input" id="29"></input>
             <input type="text" className="input" id="30"></input>
           </div>
+          <div id="letter-area"></div>
         </div>
       </div>
     </>
