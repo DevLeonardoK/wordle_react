@@ -1,4 +1,5 @@
 import "./app.css";
+import { useEffect } from "react";
 
 const styleBackgroundContainer = {
   backgroundColor: "#6E5C62",
@@ -833,13 +834,14 @@ const App = () => {
       );
     }
   }
-  letrasPrimeiraLinha.forEach((letter) => {
-    const btn = document.createElement("button");
-    const buttons = document.querySelector("#buttons");
-    btn.textContent = letter;
-    buttons.append(btn);
+  useEffect(() => {
+    letrasPrimeiraLinha.forEach((letter) => {
+      const btn = document.createElement("button");
+      const buttons = document.querySelector("#buttons");
+      btn.textContent = letter;
+      buttons.append(btn);
+    });
   });
-
   function mostrar() {
     console.log(palavraSorteada);
     const elemento = document.createElement("span");
