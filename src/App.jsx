@@ -47,10 +47,6 @@ const styleBtn = {
 };
 
 const App = () => {
-  function mostrar() {
-    console.log(palavraSorteada);
-  }
-
   const palavras = [
     "abano",
     "abreu",
@@ -809,19 +805,50 @@ const App = () => {
     "saído",
     "saída",
   ];
+  const letrasPrimeiraLinha = [
+    "q",
+    "w",
+    "e",
+    "r",
+    "t",
+    "y",
+    "u",
+    "i",
+    "o",
+    "p",
+  ];
+
   let sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].split("");
+
   for (let i = 0; i < palavraSorteada.length; i++) {
-    const total = palavraSorteada.filter(
-      (x) => x === palavraSorteada[i]
-    ).length;
-    if (total > 1) {
+    var total = palavraSorteada.filter((x) => x === palavraSorteada[i]).length;
+    if (total >= 0) {
       var letraRepetida = palavraSorteada[i];
-      console.log(letraRepetida, "=== essa letra repete: ", total, " vezes");
+      var mensagem = console.log(
+        letraRepetida,
+        "=== essa letra repete: ",
+        total,
+        " vezes"
+      );
     }
+  }
+  letrasPrimeiraLinha.forEach((letter) => {
+    const btn = document.createElement("button");
+    const buttons = document.querySelector("#buttons");
+    btn.textContent = letter;
+    buttons.append(btn);
+  });
+
+  function mostrar() {
+    console.log(palavraSorteada);
+    const elemento = document.createElement("span");
+    elemento.textContent = mensagem;
+    console.log(letraRepetida, total);
   }
 
   function firstLine() {
+    console.log(letraRepetida);
     // const total = [s1.value, s2.value, s3.value, s4.value, s5.value];
 
     const s1 = document.getElementById("1");
@@ -1231,7 +1258,7 @@ const App = () => {
 
   return (
     <>
-      <div className="Container" style={styleBackgroundContainer}>
+      <div className="Container" style={styleBackgroundContainer} id="buttons">
         <h1 className="title" style={styleTitle}>
           TERMO
         </h1>
@@ -1274,6 +1301,7 @@ const App = () => {
             <input type="text" className="input" id="9"></input>
             <input type="text" className="input" id="10"></input>
           </div>
+
           <div className="row-area" style={styleRow}>
             <input type="text" className="input" id="11"></input>
             <input type="text" className="input" id="12"></input>
