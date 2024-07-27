@@ -47,10 +47,13 @@ input:focus {
   justify-content: center;
   align-items: center;
   background-color: #4d4346;
-  font-family: "Mitr";
+
+  border-radius: 15px;
 }
 
 #text-letter-repeat {
+  font-family: "Mitr";
   font-weight: 300;
   text-transform: uppercase;
+  color: #fff;
 }
