@@ -164,7 +164,6 @@ const App = () => {
 
   function firstLine() {
     // const total = [s1.value, s2.value, s3.value, s4.value, s5.value];
-
     const s1 = document.getElementById("1");
     const s2 = document.getElementById("2");
     const s3 = document.getElementById("3");
@@ -221,6 +220,7 @@ const App = () => {
       s5.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
     }
   }
 
@@ -283,6 +283,7 @@ const App = () => {
       s10.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
     }
   }
   function terceiraLine() {
@@ -354,6 +355,7 @@ const App = () => {
       s15.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
     }
   }
   function quartaLine() {
@@ -425,6 +427,7 @@ const App = () => {
       s20.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
     }
   }
   function quintaLine() {
@@ -496,6 +499,7 @@ const App = () => {
       s25.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
     }
   }
   function sextaLine() {
@@ -567,9 +571,11 @@ const App = () => {
       s30.value === palavraSorteada[4]
     ) {
       alert("PARABENS JOGOS FINALIZADOS");
+      window.location.reload(true);
+    } else {
+      alert("ACABARAM AS TENTATIVAS, ERROU TUDO");
     }
   }
-
   return (
     <>
       <div className="Container" style={styleBackgroundContainer} id="buttons">
