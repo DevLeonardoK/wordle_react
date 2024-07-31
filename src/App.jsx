@@ -314,7 +314,7 @@ const App = () => {
         alert("PARABENS JOGOS FINALIZADOS");
         window.location.reload(true);
       }
-      setTimeout(sendMessage, 4000);
+      setTimeout(sendMessage, 1000);
     }
   }
 
@@ -376,8 +376,16 @@ const App = () => {
       s9.value === palavraSorteada[3] &&
       s10.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input2").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input2")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 1000);
     }
   }
   function terceiraLine() {
@@ -448,8 +456,16 @@ const App = () => {
       s14.value === palavraSorteada[3] &&
       s15.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input1").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input3")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 1000);
     }
   }
   function quartaLine() {
@@ -520,8 +536,16 @@ const App = () => {
       s19.value === palavraSorteada[3] &&
       s20.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input1").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input4")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 1000);
     }
   }
   function quintaLine() {
@@ -592,8 +616,16 @@ const App = () => {
       s24.value === palavraSorteada[3] &&
       s25.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input1").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input5")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 1000);
     }
   }
   function sextaLine() {
@@ -664,8 +696,16 @@ const App = () => {
       s29.value === palavraSorteada[3] &&
       s30.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input1").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input6")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 1000);
     } else {
       alert("ACABARAM AS TENTATIVAS, ERROU TUDO");
     }
