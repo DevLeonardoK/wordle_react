@@ -150,6 +150,86 @@ const App = () => {
     }
   }
 
+  return (
+    <>
+      <div className="Container" style={styleBackgroundContainer} id="buttons">
+        <h1 className="title" style={styleTitle}>
+          TERMO
+        </h1>
+        <div className="buttons">
+          <button onClick={firstLine} style={styleBtn}>
+            Primeira Linha
+          </button>
+          <button onClick={secondLine} style={styleBtn}>
+            Segunda Linha
+          </button>
+          <button onClick={terceiraLine} style={styleBtn}>
+            Terceira Linha
+          </button>
+          <button onClick={quartaLine} style={styleBtn}>
+            Quarta Linha
+          </button>
+          <button onClick={quintaLine} style={styleBtn}>
+            Quinta Linha
+          </button>
+          <button onClick={sextaLine} style={styleBtn}>
+            Sexta Linha
+          </button>
+          <button onClick={mostrar} style={styleBtn}>
+            Mostrar
+          </button>
+        </div>
+
+        <div className="container-area-app">
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input1" id="1"></input>
+            <input type="text" className="input1" id="2"></input>
+            <input type="text" className="input1" id="3"></input>
+            <input type="text" className="input1" id="4"></input>
+            <input type="text" className="input1" id="5"></input>
+          </div>
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input2" id="6"></input>
+            <input type="text" className="input2" id="7"></input>
+            <input type="text" className="input2" id="8"></input>
+            <input type="text" className="input2" id="9"></input>
+            <input type="text" className="input2" id="10"></input>
+          </div>
+
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input3" id="11"></input>
+            <input type="text" className="input3" id="12"></input>
+            <input type="text" className="input3" id="13"></input>
+            <input type="text" className="input3" id="14"></input>
+            <input type="text" className="input3" id="15"></input>
+          </div>
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input4" id="16"></input>
+            <input type="text" className="input4" id="17"></input>
+            <input type="text" className="input4" id="18"></input>
+            <input type="text" className="input4" id="19"></input>
+            <input type="text" className="input4" id="20"></input>
+          </div>
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input5" id="21"></input>
+            <input type="text" className="input5" id="22"></input>
+            <input type="text" className="input5" id="23"></input>
+            <input type="text" className="input5" id="24"></input>
+            <input type="text" className="input5" id="25"></input>
+          </div>
+          <div className="row-area" style={styleRow}>
+            <input type="text" className="input6" id="26"></input>
+            <input type="text" className="input6" id="27"></input>
+            <input type="text" className="input6" id="28"></input>
+            <input type="text" className="input6" id="29"></input>
+            <input type="text" className="input6" id="30"></input>
+          </div>
+          <div id="letter-area"></div>
+        </div>
+      </div>
+    </>
+  );
+
   function mostrar() {
     const areaLetter = document.getElementById("letter-area");
     console.log(palavraSorteada);
@@ -573,85 +653,6 @@ const App = () => {
       alert("ACABARAM AS TENTATIVAS, ERROU TUDO");
     }
   }
-  return (
-    <>
-      <div className="Container" style={styleBackgroundContainer} id="buttons">
-        <h1 className="title" style={styleTitle}>
-          TERMO
-        </h1>
-        <div className="buttons">
-          <button onClick={firstLine} style={styleBtn}>
-            Primeira Linha
-          </button>
-          <button onClick={secondLine} style={styleBtn}>
-            Segunda Linha
-          </button>
-          <button onClick={terceiraLine} style={styleBtn}>
-            Terceira Linha
-          </button>
-          <button onClick={quartaLine} style={styleBtn}>
-            Quarta Linha
-          </button>
-          <button onClick={quintaLine} style={styleBtn}>
-            Quinta Linha
-          </button>
-          <button onClick={sextaLine} style={styleBtn}>
-            Sexta Linha
-          </button>
-          <button onClick={mostrar} style={styleBtn}>
-            Mostrar
-          </button>
-        </div>
-
-        <div className="container-area-app">
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="1"></input>
-            <input type="text" className="input" id="2"></input>
-            <input type="text" className="input" id="3"></input>
-            <input type="text" className="input" id="4"></input>
-            <input type="text" className="input" id="5"></input>
-          </div>
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="6"></input>
-            <input type="text" className="input" id="7"></input>
-            <input type="text" className="input" id="8"></input>
-            <input type="text" className="input" id="9"></input>
-            <input type="text" className="input" id="10"></input>
-          </div>
-
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="11"></input>
-            <input type="text" className="input" id="12"></input>
-            <input type="text" className="input" id="13"></input>
-            <input type="text" className="input" id="14"></input>
-            <input type="text" className="input" id="15"></input>
-          </div>
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="16"></input>
-            <input type="text" className="input" id="17"></input>
-            <input type="text" className="input" id="18"></input>
-            <input type="text" className="input" id="19"></input>
-            <input type="text" className="input" id="20"></input>
-          </div>
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="21"></input>
-            <input type="text" className="input" id="22"></input>
-            <input type="text" className="input" id="23"></input>
-            <input type="text" className="input" id="24"></input>
-            <input type="text" className="input" id="25"></input>
-          </div>
-          <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="26"></input>
-            <input type="text" className="input" id="27"></input>
-            <input type="text" className="input" id="28"></input>
-            <input type="text" className="input" id="29"></input>
-            <input type="text" className="input" id="30"></input>
-          </div>
-          <div id="letter-area"></div>
-        </div>
-      </div>
-    </>
-  );
 };
 
 export default App;
