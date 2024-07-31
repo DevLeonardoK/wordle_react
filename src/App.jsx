@@ -150,6 +150,15 @@ const App = () => {
     }
   }
 
+  function showKey() {
+    document.addEventListener("keydown", (event) => {
+      var key = event.key;
+      return console.log(key);
+    });
+  }
+
+  showKey();
+
   return (
     <>
       <div className="Container" style={styleBackgroundContainer} id="buttons">
@@ -296,8 +305,16 @@ const App = () => {
       s4.value === palavraSorteada[3] &&
       s5.value === palavraSorteada[4]
     ) {
-      alert("PARABENS JOGOS FINALIZADOS");
-      window.location.reload(true);
+      let valuesOne = document.getElementsByClassName("input1").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input1")[i].style.backgroundColor =
+          "green";
+      }
+      function sendMessage() {
+        alert("PARABENS JOGOS FINALIZADOS");
+        window.location.reload(true);
+      }
+      setTimeout(sendMessage, 4000);
     }
   }
 
