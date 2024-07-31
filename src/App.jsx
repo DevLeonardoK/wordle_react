@@ -150,14 +150,7 @@ const App = () => {
     }
   }
 
-  function showKey() {
-    document.addEventListener("keydown", (event) => {
-      var key = event.key;
-      return console.log(key);
-    });
-  }
-
-  showKey();
+  verificarLine();
 
   return (
     <>
@@ -191,7 +184,7 @@ const App = () => {
 
         <div className="container-area-app">
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input1" id="1"></input>
+            <input type="text" className="input1" id="1" autoFocus></input>
             <input type="text" className="input1" id="2"></input>
             <input type="text" className="input1" id="3"></input>
             <input type="text" className="input1" id="4"></input>
@@ -709,6 +702,27 @@ const App = () => {
     } else {
       alert("ACABARAM AS TENTATIVAS, ERROU TUDO");
     }
+  }
+  function verificarLine() {
+    const s1 = document.getElementById("1");
+    const s2 = document.getElementById("2");
+    const s3 = document.getElementById("3");
+    const s4 = document.getElementById("4");
+    const s5 = document.getElementById("5");
+    const valuesLineOne = document.getElementsByClassName("input1");
+
+    document.addEventListener("keydown", (event) => {
+      var letra = event.key;
+      if (letra === "Enter") {
+        for (let i = 0; i < valuesLineOne.length; i++) {
+          if (valuesLineOne[i] !== null || undefined) {
+            firstLine();
+          } else {
+            console.log("sabe");
+          }
+        }
+      }
+    });
   }
 };
 
