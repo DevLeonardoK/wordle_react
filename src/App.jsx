@@ -159,9 +159,6 @@ const App = () => {
           TERMO
         </h1>
         <div className="buttons">
-          <button onClick={firstLine} style={styleBtn}>
-            Primeira Linha
-          </button>
           <button onClick={secondLine} style={styleBtn}>
             Segunda Linha
           </button>
@@ -309,6 +306,7 @@ const App = () => {
       }
       setTimeout(sendMessage, 1000);
     }
+    document.getElementById("6").focus();
   }
 
   function secondLine() {
@@ -709,6 +707,7 @@ const App = () => {
     const s3 = document.getElementById("3");
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
+    const s6 = document.getElementById("6");
     const valuesLineOne = document.getElementsByClassName("input1");
 
     document.addEventListener("keydown", (event) => {
