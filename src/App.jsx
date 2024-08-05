@@ -1,4 +1,5 @@
 import "./app.css";
+import { useState } from "react";
 
 const styleBackgroundContainer = {
   backgroundColor: "#6E5C62",
@@ -38,6 +39,8 @@ const styleBtn = {
 };
 
 const App = () => {
+  const [count, setCount] = useState(0);
+  var contador = 0;
   const palavras = [
     "amigo",
     "livro",
@@ -151,7 +154,6 @@ const App = () => {
   }
 
   verificarLine();
-
   return (
     <>
       <div className="Container" style={styleBackgroundContainer} id="buttons">
@@ -236,6 +238,7 @@ const App = () => {
     elemento.setAttribute("id", "text-letter-repeat");
     elemento.textContent = mensagem;
     areaLetter.appendChild(elemento);
+    console.log(contador);
   }
 
   function firstLine() {
@@ -301,8 +304,8 @@ const App = () => {
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
@@ -315,6 +318,7 @@ const App = () => {
     const s8 = document.getElementById("8");
     const s9 = document.getElementById("9");
     const s10 = document.getElementById("10");
+    const s11 = document.getElementById("11");
 
     if (palavraSorteada[0] !== s6.value && palavraSorteada.includes(s6.value)) {
       s6.style.backgroundColor = "yellow";
@@ -373,11 +377,12 @@ const App = () => {
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
+    s11.focus();
   }
   function terceiraLine() {
     const s11 = document.getElementById("11");
@@ -385,6 +390,7 @@ const App = () => {
     const s13 = document.getElementById("13");
     const s14 = document.getElementById("14");
     const s15 = document.getElementById("15");
+    const s16 = document.getElementById("16");
     if (
       palavraSorteada[0] !== s11.value &&
       palavraSorteada.includes(s11.value)
@@ -447,17 +453,18 @@ const App = () => {
       s14.value === palavraSorteada[3] &&
       s15.value === palavraSorteada[4]
     ) {
-      let valuesOne = document.getElementsByClassName("input1").length;
+      let valuesOne = document.getElementsByClassName("input3").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input3")[i].style.backgroundColor =
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
+    s16.focus();
   }
   function quartaLine() {
     const s16 = document.getElementById("16");
@@ -465,6 +472,7 @@ const App = () => {
     const s18 = document.getElementById("18");
     const s19 = document.getElementById("19");
     const s20 = document.getElementById("20");
+    const s21 = document.getElementById("21");
     if (
       palavraSorteada[0] !== s16.value &&
       palavraSorteada.includes(s16.value)
@@ -527,17 +535,18 @@ const App = () => {
       s19.value === palavraSorteada[3] &&
       s20.value === palavraSorteada[4]
     ) {
-      let valuesOne = document.getElementsByClassName("input1").length;
+      let valuesOne = document.getElementsByClassName("input4").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input4")[i].style.backgroundColor =
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
+    s21.focus();
   }
   function quintaLine() {
     const s21 = document.getElementById("21");
@@ -545,6 +554,7 @@ const App = () => {
     const s23 = document.getElementById("23");
     const s24 = document.getElementById("24");
     const s25 = document.getElementById("25");
+    const s26 = document.getElementById("26");
     if (
       palavraSorteada[0] !== s21.value &&
       palavraSorteada.includes(s21.value)
@@ -607,17 +617,18 @@ const App = () => {
       s24.value === palavraSorteada[3] &&
       s25.value === palavraSorteada[4]
     ) {
-      let valuesOne = document.getElementsByClassName("input1").length;
+      let valuesOne = document.getElementsByClassName("input5").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input5")[i].style.backgroundColor =
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
+    s26.focus();
   }
   function sextaLine() {
     const s26 = document.getElementById("26");
@@ -687,38 +698,95 @@ const App = () => {
       s29.value === palavraSorteada[3] &&
       s30.value === palavraSorteada[4]
     ) {
-      let valuesOne = document.getElementsByClassName("input1").length;
+      let valuesOne = document.getElementsByClassName("input6").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input6")[i].style.backgroundColor =
           "green";
       }
       function sendMessage() {
-        alert("PARABENS JOGOS FINALIZADOS");
-        window.location.reload(true);
+        // alert("PARABENS JOGOS FINALIZADOS");
+        // window.location.reload(true);
       }
+      console.log("funcionou");
       setTimeout(sendMessage, 1000);
     } else {
-      alert("ACABARAM AS TENTATIVAS, ERROU TUDO");
+      let valuesOne = document.getElementsByClassName("input6").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input6")[i].style.backgroundColor =
+          "red";
+      }
+      console.log("Perdeu, todas as alternativas falharam");
     }
   }
+
   function verificarLine() {
-    const s1 = document.getElementById("1");
-    const s2 = document.getElementById("2");
-    const s3 = document.getElementById("3");
-    const s4 = document.getElementById("4");
-    const s5 = document.getElementById("5");
-    const s6 = document.getElementById("6");
-    const valuesLineOne = document.getElementsByClassName("input1");
+    const valuesLine1 = document.getElementsByClassName("input1");
+    const valuesLine2 = document.getElementsByClassName("input2");
+    const valuesLine3 = document.getElementsByClassName("input3");
+    const valuesLine4 = document.getElementsByClassName("input4");
+    const valuesLine5 = document.getElementsByClassName("input5");
+    const valuesLine6 = document.getElementsByClassName("input6");
 
     document.addEventListener("keydown", (event) => {
       var letra = event.key;
       if (letra === "Enter") {
-        for (let i = 0; i < valuesLineOne.length; i++) {
-          if (valuesLineOne[i] !== null || undefined) {
-            firstLine();
-          } else {
-            console.log("sabe");
-          }
+        contador = contador + 1;
+        switch (contador) {
+          case 1:
+            for (let i = 0; i < valuesLine1.length; i++) {
+              if (valuesLine1[i] !== null) {
+                firstLine();
+              }
+              console.log(document.getElementsByClassName("input1")[i].value);
+            }
+
+            break;
+          case 2:
+            for (let i = 0; i < valuesLine2.length; i++) {
+              if (valuesLine2[i] !== null || undefined) {
+                secondLine();
+              }
+            }
+
+            break;
+
+          case 3:
+            for (let i = 0; i < valuesLine3.length; i++) {
+              if (valuesLine3[i] !== null || undefined) {
+                terceiraLine();
+              }
+            }
+
+            break;
+
+          case 4:
+            for (let i = 0; i < valuesLine4.length; i++) {
+              if (valuesLine4[i] !== null || undefined) {
+                quartaLine();
+              }
+            }
+
+            break;
+
+          case 5:
+            for (let i = 0; i < valuesLine5.length; i++) {
+              if (valuesLine5[i] !== null || undefined) {
+                quintaLine();
+              }
+            }
+
+            break;
+
+          case 6:
+            for (let i = 0; i < valuesLine6.length; i++) {
+              if (valuesLine6[i] !== null || undefined) {
+                sextaLine();
+              }
+            }
+            break;
+
+          default:
+            break;
         }
       }
     });
