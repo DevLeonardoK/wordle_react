@@ -51,7 +51,6 @@ const App = () => {
     "broto",
     "claro",
     "denso",
-    "doce",
     "ervas",
     "extra",
     "feixe",
@@ -70,7 +69,6 @@ const App = () => {
     "prato",
     "quero",
     "resto",
-    "seco",
     "tempo",
     "vazio",
   ];
@@ -78,6 +76,8 @@ const App = () => {
   //sorteio da palavra
   let sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].split("");
+  const palavraMostrarAlert = palavras[sorteio].toUpperCase();
+  var word = [palavraMostrarAlert];
 
   //verificar a letra repetida
   for (let i = 0; i < palavraSorteada.length; i++) {
@@ -169,6 +169,7 @@ const App = () => {
     const s3 = document.getElementById("3");
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
+    const s6 = document.getElementById("6");
 
     if (palavraSorteada[0] !== s1.value && palavraSorteada.includes(s1.value)) {
       s1.style.backgroundColor = "yellow";
@@ -227,7 +228,7 @@ const App = () => {
       setTimeout(sendMessage, 110);
     }
 
-    document.getElementById("6").focus();
+    s6.focus();
   }
 
   function secondLine() {
@@ -293,10 +294,6 @@ const App = () => {
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input2")[i].style.backgroundColor =
           "green";
-      }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
@@ -376,10 +373,6 @@ const App = () => {
         document.getElementsByClassName("input3")[i].style.backgroundColor =
           "green";
       }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
-      }
       setTimeout(sendMessage, 1000);
     }
     s16.focus();
@@ -457,10 +450,6 @@ const App = () => {
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input4")[i].style.backgroundColor =
           "green";
-      }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
       }
       setTimeout(sendMessage, 1000);
     }
@@ -540,10 +529,6 @@ const App = () => {
         document.getElementsByClassName("input5")[i].style.backgroundColor =
           "green";
       }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
-      }
       setTimeout(sendMessage, 1000);
     }
     s26.focus();
@@ -621,15 +606,13 @@ const App = () => {
         document.getElementsByClassName("input6")[i].style.backgroundColor =
           "red";
       }
-      console.log("errou");
-      setTimeout(sendMessage, 1000);
     } else {
       let valuesOne = document.getElementsByClassName("input6").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input6")[i].style.backgroundColor =
           "green";
       }
-      console.log("acertou");
+      setTimeout(sendMessage, 1000);
     }
   }
 
@@ -648,7 +631,7 @@ const App = () => {
         switch (contador) {
           case 1:
             for (let i = 0; i < valuesLine1.length; i++) {
-              if (valuesLine1[i] !== undefined) {
+              if (valuesLine1[i] !== null || undefined) {
                 if (!onFunction) {
                   firstLine();
                   onFunction = true;
@@ -660,7 +643,10 @@ const App = () => {
           case 2:
             for (let i = 0; i < valuesLine2.length; i++) {
               if (valuesLine2[i] !== null || undefined) {
-                secondLine();
+                if (onFunction) {
+                  secondLine();
+                  onFunction = false;
+                }
               }
             }
 
@@ -669,7 +655,10 @@ const App = () => {
           case 3:
             for (let i = 0; i < valuesLine3.length; i++) {
               if (valuesLine3[i] !== null || undefined) {
-                terceiraLine();
+                if (!onFunction) {
+                  terceiraLine();
+                  onFunction = true;
+                }
               }
             }
 
@@ -678,7 +667,10 @@ const App = () => {
           case 4:
             for (let i = 0; i < valuesLine4.length; i++) {
               if (valuesLine4[i] !== null || undefined) {
-                quartaLine();
+                if (onFunction) {
+                  quartaLine();
+                  onFunction = false;
+                }
               }
             }
 
@@ -687,7 +679,10 @@ const App = () => {
           case 5:
             for (let i = 0; i < valuesLine5.length; i++) {
               if (valuesLine5[i] !== null || undefined) {
-                quintaLine();
+                if (!onFunction) {
+                  quintaLine();
+                  onFunction = true;
+                }
               }
             }
 
@@ -696,7 +691,10 @@ const App = () => {
           case 6:
             for (let i = 0; i < valuesLine6.length; i++) {
               if (valuesLine6[i] !== null || undefined) {
-                sextaLine();
+                if (onFunction) {
+                  sextaLine();
+                  onFunction = false;
+                }
               }
             }
             break;
