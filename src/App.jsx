@@ -41,6 +41,7 @@ const styleBtn = {
 const App = () => {
   const [count, setCount] = useState(0);
   var contador = 0;
+  var onFunction = false;
   const palavras = [
     "amigo",
     "livro",
@@ -161,7 +162,7 @@ const App = () => {
           TERMO
         </h1>
         <div className="buttons">
-          <button onClick={secondLine} style={styleBtn}>
+          <button onClick={firstLine} style={styleBtn}>
             Segunda Linha
           </button>
           <button onClick={terceiraLine} style={styleBtn}>
@@ -230,6 +231,10 @@ const App = () => {
       </div>
     </>
   );
+
+  function sendMessage() {
+    alert("ganhou");
+  }
 
   function mostrar() {
     const areaLetter = document.getElementById("letter-area");
@@ -303,12 +308,9 @@ const App = () => {
         document.getElementsByClassName("input1")[i].style.backgroundColor =
           "green";
       }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
-      }
-      setTimeout(sendMessage, 1000);
+      setTimeout(sendMessage, 110);
     }
+
     document.getElementById("6").focus();
   }
 
@@ -692,30 +694,26 @@ const App = () => {
     s29.readOnly = "readOnly";
     s30.readOnly = "readOnly";
     if (
-      s26.value === palavraSorteada[0] &&
-      s27.value === palavraSorteada[1] &&
-      s28.value === palavraSorteada[2] &&
-      s29.value === palavraSorteada[3] &&
-      s30.value === palavraSorteada[4]
+      s26.value !== palavraSorteada[0] &&
+      s27.value !== palavraSorteada[1] &&
+      s28.value !== palavraSorteada[2] &&
+      s29.value !== palavraSorteada[3] &&
+      s30.value !== palavraSorteada[4]
     ) {
-      let valuesOne = document.getElementsByClassName("input6").length;
-      for (let i = 0; i < valuesOne; i++) {
-        document.getElementsByClassName("input6")[i].style.backgroundColor =
-          "green";
-      }
-      function sendMessage() {
-        // alert("PARABENS JOGOS FINALIZADOS");
-        // window.location.reload(true);
-      }
-      console.log("funcionou");
-      setTimeout(sendMessage, 1000);
-    } else {
       let valuesOne = document.getElementsByClassName("input6").length;
       for (let i = 0; i < valuesOne; i++) {
         document.getElementsByClassName("input6")[i].style.backgroundColor =
           "red";
       }
-      console.log("Perdeu, todas as alternativas falharam");
+      console.log("errou");
+      setTimeout(sendMessage, 1000);
+    } else {
+      let valuesOne = document.getElementsByClassName("input6").length;
+      for (let i = 0; i < valuesOne; i++) {
+        document.getElementsByClassName("input6")[i].style.backgroundColor =
+          "green";
+      }
+      console.log("acertou");
     }
   }
 
@@ -734,10 +732,12 @@ const App = () => {
         switch (contador) {
           case 1:
             for (let i = 0; i < valuesLine1.length; i++) {
-              if (valuesLine1[i] !== null) {
-                firstLine();
+              if (valuesLine1[i] !== undefined) {
+                if (!onFunction) {
+                  firstLine();
+                  onFunction = true;
+                }
               }
-              console.log(document.getElementsByClassName("input1")[i].value);
             }
 
             break;
