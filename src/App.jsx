@@ -162,6 +162,9 @@ const App = () => {
           TERMO
         </h1>
         <div className="container-area-app">
+          <div className="showArea">
+            <button onClick={mostrar}>SHOW</button>
+          </div>
           <div className="row-area" style={styleRow}>
             <input type="text" className="input1" id="1" autoFocus></input>
             <input type="text" className="input1" id="2"></input>
