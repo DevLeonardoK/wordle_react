@@ -161,27 +161,6 @@ const App = () => {
         <h1 className="title" style={styleTitle}>
           TERMO
         </h1>
-        <div className="buttons">
-          <button onClick={firstLine} style={styleBtn}>
-            Segunda Linha
-          </button>
-          <button onClick={terceiraLine} style={styleBtn}>
-            Terceira Linha
-          </button>
-          <button onClick={quartaLine} style={styleBtn}>
-            Quarta Linha
-          </button>
-          <button onClick={quintaLine} style={styleBtn}>
-            Quinta Linha
-          </button>
-          <button onClick={sextaLine} style={styleBtn}>
-            Sexta Linha
-          </button>
-          <button onClick={mostrar} style={styleBtn}>
-            Mostrar
-          </button>
-        </div>
-
         <div className="container-area-app">
           <div className="row-area" style={styleRow}>
             <input type="text" className="input1" id="1" autoFocus></input>

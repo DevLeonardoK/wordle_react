@@ -21,15 +21,6 @@ input:focus {
   border: none;
 }
 
-.buttons {
-  width: 100vw;
-  height: 110px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-
 .container-area-app {
   width: 430px;
   height: 650px;
