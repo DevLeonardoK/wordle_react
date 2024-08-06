@@ -1,5 +1,5 @@
+import { useEffect } from "react";
 import "./app.css";
-import { useState } from "react";
 
 const styleBackgroundContainer = {
   backgroundColor: "#6E5C62",
@@ -39,7 +39,6 @@ const styleBtn = {
 };
 
 const App = () => {
-  const [count, setCount] = useState(0);
   var contador = 0;
   var onFunction = false;
   const palavras = [
@@ -74,10 +73,10 @@ const App = () => {
   ];
 
   //sorteio da palavra
-  let sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
+  const sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].split("");
-  const palavraMostrarAlert = palavras[sorteio].toUpperCase();
-  var word = [palavraMostrarAlert];
+  // const palavraMostrarAlert = palavras[sorteio].toUpperCase();
+  // var word = [palavraMostrarAlert];
 
   //verificar a letra repetida
   for (let i = 0; i < palavraSorteada.length; i++) {
@@ -87,6 +86,10 @@ const App = () => {
       var mensagem = letraRepetida + " repete: " + total;
     }
   }
+
+  useEffect(() => {
+    ver();
+  });
 
   verificarLine();
   return (
@@ -147,6 +150,10 @@ const App = () => {
       </div>
     </>
   );
+
+  function ver() {
+    console.log(palavraSorteada);
+  }
 
   function sendMessage() {
     alert("ganhou");
@@ -606,6 +613,7 @@ const App = () => {
         document.getElementsByClassName("input6")[i].style.backgroundColor =
           "red";
       }
+      console.log(palavraSorteada, sorteio);
     } else {
       let valuesOne = document.getElementsByClassName("input6").length;
       for (let i = 0; i < valuesOne; i++) {
