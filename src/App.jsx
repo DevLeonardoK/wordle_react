@@ -100,7 +100,7 @@ const App = () => {
         </h1>
         <div className="container-area-app">
           <div className="showArea">
-            <button onClick={mostrar}>SHOW</button>
+            <button onClick={passar}>SHOW</button>
           </div>
           <div className="row-area" style={styleRow}>
             <input type="text" className="input1" id="1" autoFocus></input>
@@ -712,6 +712,21 @@ const App = () => {
         }
       }
     });
+  }
+  function passar() {
+    const valuesLine1 = document.getElementsByClassName("input1");
+    const valuesLine2 = document.getElementsByClassName("input2");
+    const valuesLine3 = document.getElementsByClassName("input3");
+    const valuesLine4 = document.getElementsByClassName("input4");
+    const valuesLine5 = document.getElementsByClassName("input5");
+    const valuesLine6 = document.getElementsByClassName("input6");
+    for (let i = 0; i < valuesLine1.length; i++) {
+      if (valuesLine1[i].value === "") {
+        const target = [valuesLine1[i].value];
+        console.log(target);
+        valuesLine1[i].style.backgroundColor = "blue";
+      }
+    }
   }
 };
 
