@@ -74,7 +74,7 @@ const App = () => {
 
   //sorteio da palavra
   const sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
-  const palavraSorteada = palavras[sorteio].split("");
+  const palavraSorteada = palavras[sorteio].toUpperCase().split("");
   // const palavraMostrarAlert = palavras[sorteio].toUpperCase();
   // var word = [palavraMostrarAlert];
 
@@ -154,7 +154,6 @@ const App = () => {
   function ver() {
     console.log(palavraSorteada);
   }
-
   function sendMessage() {
     alert("ganhou");
   }
@@ -178,40 +177,55 @@ const App = () => {
     const s5 = document.getElementById("5");
     const s6 = document.getElementById("6");
 
-    if (palavraSorteada[0] !== s1.value && palavraSorteada.includes(s1.value)) {
+    if (
+      palavraSorteada[0] !== s1.value.toUpperCase() &&
+      palavraSorteada.includes(s1.value.toUpperCase())
+    ) {
       s1.style.backgroundColor = "yellow";
-    } else if (s1.value === palavraSorteada[0]) {
+    } else if (s1.value.toUpperCase() === palavraSorteada[0]) {
       s1.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s1.value)) {
+    } else if (!palavraSorteada.includes(s1.value.toUpperCase())) {
       s1.style.backgroundColor = "red";
     }
 
-    if (palavraSorteada[1] !== s2.value && palavraSorteada.includes(s2.value)) {
+    if (
+      palavraSorteada[1] !== s2.value.toUpperCase() &&
+      palavraSorteada.includes(s2.value.toUpperCase())
+    ) {
       s2.style.backgroundColor = "yellow";
-    } else if (s2.value === palavraSorteada[1]) {
+    } else if (s2.value.toUpperCase() === palavraSorteada[1]) {
       s2.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s2.value)) {
+    } else if (!palavraSorteada.includes(s2.value.toUpperCase())) {
       s2.style.backgroundColor = "red";
     }
-    if (palavraSorteada[2] !== s3.value && palavraSorteada.includes(s3.value)) {
+    if (
+      palavraSorteada[2] !== s3.value.toUpperCase() &&
+      palavraSorteada.includes(s3.value.toUpperCase())
+    ) {
       s3.style.backgroundColor = "yellow";
-    } else if (s3.value === palavraSorteada[2]) {
+    } else if (s3.value.toUpperCase() === palavraSorteada[2]) {
       s3.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s3.value)) {
+    } else if (!palavraSorteada.includes(s3.value.toUpperCase())) {
       s3.style.backgroundColor = "red";
     }
-    if (palavraSorteada[3] !== s4.value && palavraSorteada.includes(s4.value)) {
+    if (
+      palavraSorteada[3] !== s4.value.toUpperCase() &&
+      palavraSorteada.includes(s4.value.toUpperCase())
+    ) {
       s4.style.backgroundColor = "yellow";
-    } else if (s4.value === palavraSorteada[3]) {
+    } else if (s4.value.toUpperCase() === palavraSorteada[3]) {
       s4.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s4.value)) {
+    } else if (!palavraSorteada.includes(s4.value.toUpperCase())) {
       s4.style.backgroundColor = "red";
     }
-    if (palavraSorteada[4] !== s5.value && palavraSorteada.includes(s5.value)) {
+    if (
+      palavraSorteada[4] !== s5.value.toUpperCase() &&
+      palavraSorteada.includes(s5.value.toUpperCase())
+    ) {
       s5.style.backgroundColor = "yellow";
-    } else if (s5.value === palavraSorteada[4]) {
+    } else if (s5.value.toUpperCase() === palavraSorteada[4]) {
       s5.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s5.value)) {
+    } else if (!palavraSorteada.includes(s5.value.toUpperCase())) {
       s5.style.backgroundColor = "red";
     }
     s1.readOnly = "readOnly";
@@ -221,11 +235,11 @@ const App = () => {
     s5.readOnly = "readOnly";
 
     if (
-      s1.value === palavraSorteada[0] &&
-      s2.value === palavraSorteada[1] &&
-      s3.value === palavraSorteada[2] &&
-      s4.value === palavraSorteada[3] &&
-      s5.value === palavraSorteada[4]
+      s1.value.toUpperCase() === palavraSorteada[0] &&
+      s2.value.toUpperCase() === palavraSorteada[1] &&
+      s3.value.toUpperCase() === palavraSorteada[2] &&
+      s4.value.toUpperCase() === palavraSorteada[3] &&
+      s5.value.toUpperCase() === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input1").length;
       for (let i = 0; i < valuesOne; i++) {
