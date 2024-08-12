@@ -89,9 +89,11 @@ const App = () => {
 
   useEffect(() => {
     ver();
+    passarInput();
   });
 
   verificarLine();
+
   return (
     <>
       <div className="Container" style={styleBackgroundContainer} id="buttons">
@@ -100,7 +102,7 @@ const App = () => {
         </h1>
         <div className="container-area-app">
           <div className="showArea">
-            <button onClick={passar}>SHOW</button>
+            <button onClick={passarInput}>SHOW</button>
           </div>
           <div className="row-area" style={styleRow}>
             <input type="text" className="input1" id="1" autoFocus></input>
@@ -727,20 +729,30 @@ const App = () => {
       }
     });
   }
-  function passar() {
+  function passarInput() {
     const valuesLine1 = document.getElementsByClassName("input1");
     const valuesLine2 = document.getElementsByClassName("input2");
     const valuesLine3 = document.getElementsByClassName("input3");
     const valuesLine4 = document.getElementsByClassName("input4");
     const valuesLine5 = document.getElementsByClassName("input5");
     const valuesLine6 = document.getElementsByClassName("input6");
-    for (let i = 0; i < valuesLine1.length; i++) {
-      if (valuesLine1[i].value === "") {
-        const target = [valuesLine1[i].value];
-        console.log(target);
-        valuesLine1[i].style.backgroundColor = "blue";
+    document.addEventListener("keyup", (event) => {
+      for (let i = 0; i < valuesLine1.length; i++) {
+        if (valuesLine1[i].value !== "") {
+          console.log(event.key);
+          console.log(i);
+          valuesLine1[i].style.backgroundColor = "blue";
+          valuesLine1[i].value = "@";
+          valuesLine1[i].readOnly = "readOnly";
+          if (i === 4) {
+            valuesLine1[i].style.backgroundColor = "blue";
+            valuesLine1[i].value = "@";
+          } else {
+            valuesLine1[i + 1].focus();
+          }
+        }
       }
-    }
+    });
   }
 };
 
