@@ -742,11 +742,12 @@ const App = () => {
           console.log(event.key);
           console.log(i);
           valuesLine1[i].style.backgroundColor = "blue";
-          valuesLine1[i].value = "@";
+          valuesLine1[i].value = "!";
           valuesLine1[i].readOnly = "readOnly";
           if (i === 4) {
             valuesLine1[i].style.backgroundColor = "blue";
             valuesLine1[i].value = "@";
+            //excluir linhas, não vai mudar nada
           } else {
             valuesLine1[i + 1].focus();
           }
