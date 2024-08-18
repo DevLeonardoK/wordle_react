@@ -16,7 +16,7 @@ input {
 
 input:focus {
   outline: none;
-  background-color: #fff;
+  /* background-color: #fff; */
   transition: 0.35s;
   border: none;
 }

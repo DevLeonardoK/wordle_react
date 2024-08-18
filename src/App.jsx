@@ -91,7 +91,6 @@ const App = () => {
     ver();
     passarInput();
   });
-
   verificarLine();
 
   return (
@@ -105,11 +104,17 @@ const App = () => {
             <button onClick={passarInput}>SHOW</button>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input1" id="1" autoFocus></input>
-            <input type="text" className="input1" id="2"></input>
-            <input type="text" className="input1" id="3"></input>
-            <input type="text" className="input1" id="4"></input>
-            <input type="text" className="input1" id="5"></input>
+            <input
+              type="text"
+              className="input1"
+              id="1"
+              autoFocus
+              maxLength={1}
+            ></input>
+            <input type="text" className="input1" id="2" maxLength={1}></input>
+            <input type="text" className="input1" id="3" maxLength={1}></input>
+            <input type="text" className="input1" id="4" maxLength={1}></input>
+            <input type="text" className="input1" id="5" maxLength={1}></input>
           </div>
           <div className="row-area" style={styleRow}>
             <input type="text" className="input2" id="6"></input>
@@ -250,8 +255,6 @@ const App = () => {
       }
       setTimeout(sendMessage, 110);
     }
-
-    s6.focus();
   }
 
   function secondLine() {
@@ -658,6 +661,7 @@ const App = () => {
               if (valuesLine1[i] !== null || undefined) {
                 if (!onFunction) {
                   firstLine();
+                  valuesLine2[0].focus();
                   onFunction = true;
                 }
               }
@@ -741,15 +745,11 @@ const App = () => {
         if (valuesLine1[i].value !== "") {
           console.log(event.key);
           console.log(i);
-          valuesLine1[i].style.backgroundColor = "blue";
-          valuesLine1[i].value = "!";
           valuesLine1[i].readOnly = "readOnly";
-          if (i === 4) {
-            valuesLine1[i].style.backgroundColor = "blue";
-            valuesLine1[i].value = "@";
-            //excluir linhas, não vai mudar nada
-          } else {
+          if (i !== 4) {
             valuesLine1[i + 1].focus();
+          } else if (i === 4) {
+            valuesLine1[i].readOnly = "readOnly";
           }
         }
       }
