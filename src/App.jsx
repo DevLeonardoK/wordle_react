@@ -89,9 +89,8 @@ const App = () => {
 
   useEffect(() => {
     ver();
-    passarInput();
+    verificarLine();
   });
-  verificarLine();
 
   return (
     <>
@@ -101,7 +100,7 @@ const App = () => {
         </h1>
         <div className="container-area-app">
           <div className="showArea">
-            <button onClick={passarInput}>SHOW</button>
+            {/*<button onClick={passarInput}>SHOW</button>*/}
           </div>
           <div className="row-area" style={styleRow}>
             <input
@@ -183,6 +182,7 @@ const App = () => {
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
     const s6 = document.getElementById("6");
+    const s10 = document.getElementById("10");
 
     if (
       palavraSorteada[0] !== s1.value.toUpperCase() &&
@@ -255,6 +255,7 @@ const App = () => {
       }
       setTimeout(sendMessage, 110);
     }
+    s10.focus();
   }
 
   function secondLine() {
@@ -651,24 +652,25 @@ const App = () => {
     const valuesLine5 = document.getElementsByClassName("input5");
     const valuesLine6 = document.getElementsByClassName("input6");
 
-    document.addEventListener("keydown", (event) => {
+    document.addEventListener("keypress", (event) => {
       var letra = event.key;
       if (letra === "Enter") {
-        contador = contador + 1;
+        contador++;
+        console.log("valor do contador é:", contador);
         switch (contador) {
           case 1:
             for (let i = 0; i < valuesLine1.length; i++) {
-              if (valuesLine1[i] !== null || undefined) {
+              if (valuesLine1[i] !== "") {
                 if (!onFunction) {
                   firstLine();
-                  valuesLine2[0].focus();
+
                   onFunction = true;
                 }
               }
             }
 
             break;
-          case 2:
+          case 3:
             for (let i = 0; i < valuesLine2.length; i++) {
               if (valuesLine2[i] !== null || undefined) {
                 if (onFunction) {
@@ -680,7 +682,7 @@ const App = () => {
 
             break;
 
-          case 3:
+          case 5:
             for (let i = 0; i < valuesLine3.length; i++) {
               if (valuesLine3[i] !== null || undefined) {
                 if (!onFunction) {
@@ -692,7 +694,7 @@ const App = () => {
 
             break;
 
-          case 4:
+          case 7:
             for (let i = 0; i < valuesLine4.length; i++) {
               if (valuesLine4[i] !== null || undefined) {
                 if (onFunction) {
@@ -704,7 +706,7 @@ const App = () => {
 
             break;
 
-          case 5:
+          case 9:
             for (let i = 0; i < valuesLine5.length; i++) {
               if (valuesLine5[i] !== null || undefined) {
                 if (!onFunction) {
@@ -716,7 +718,7 @@ const App = () => {
 
             break;
 
-          case 6:
+          case 11:
             for (let i = 0; i < valuesLine6.length; i++) {
               if (valuesLine6[i] !== null || undefined) {
                 if (onFunction) {
@@ -733,28 +735,22 @@ const App = () => {
       }
     });
   }
-  function passarInput() {
-    const valuesLine1 = document.getElementsByClassName("input1");
-    const valuesLine2 = document.getElementsByClassName("input2");
-    const valuesLine3 = document.getElementsByClassName("input3");
-    const valuesLine4 = document.getElementsByClassName("input4");
-    const valuesLine5 = document.getElementsByClassName("input5");
-    const valuesLine6 = document.getElementsByClassName("input6");
-    document.addEventListener("keyup", (event) => {
-      for (let i = 0; i < valuesLine1.length; i++) {
-        if (valuesLine1[i].value !== "") {
-          console.log(event.key);
-          console.log(i);
-          valuesLine1[i].readOnly = "readOnly";
-          if (i !== 4) {
-            valuesLine1[i + 1].focus();
-          } else if (i === 4) {
-            valuesLine1[i].readOnly = "readOnly";
-          }
-        }
-      }
-    });
-  }
+  // function passarInput() {
+  //   const valuesLine1 = document.getElementsByClassName("input1");
+  //   const valuesLine2 = document.getElementsByClassName("input2");
+  //   const valuesLine3 = document.getElementsByClassName("input3");
+  //   const valuesLine4 = document.getElementsByClassName("input4");
+  //   const valuesLine5 = document.getElementsByClassName("input5");
+  //   const valuesLine6 = document.getElementsByClassName("input6");
+  //   document.addEventListener("keyup", (event) => {
+  //     console.log(valuesLine1.length);
+  //     for (let i = 0; i < valuesLine1.length; i++) {
+  //       if (valuesLine1[i].value !== "" && i !== 4) {
+  //         valuesLine1[i + 1].focus();
+  //       }
+  //     }
+  //   });
+  // }
 };
 
 export default App;
