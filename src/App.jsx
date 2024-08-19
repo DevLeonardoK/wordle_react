@@ -90,6 +90,7 @@ const App = () => {
   useEffect(() => {
     ver();
     verificarLine();
+    passarInput();
   });
 
   return (
@@ -105,51 +106,76 @@ const App = () => {
           <div className="row-area" style={styleRow}>
             <input
               type="text"
-              className="input1"
+              className="input"
               id="1"
               autoFocus
               maxLength={1}
+              name="linha1"
             ></input>
-            <input type="text" className="input1" id="2" maxLength={1}></input>
-            <input type="text" className="input1" id="3" maxLength={1}></input>
-            <input type="text" className="input1" id="4" maxLength={1}></input>
-            <input type="text" className="input1" id="5" maxLength={1}></input>
+            <input
+              type="text"
+              className="input"
+              id="2"
+              maxLength={1}
+              name="linha1"
+            ></input>
+            <input
+              type="text"
+              className="input"
+              id="3"
+              maxLength={1}
+              name="linha1"
+            ></input>
+            <input
+              type="text"
+              className="input"
+              id="4"
+              maxLength={1}
+              name="linha1"
+            ></input>
+            <input
+              type="text"
+              className="input"
+              id="5"
+              maxLength={1}
+              name="linha1"
+            ></input>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input2" id="6"></input>
-            <input type="text" className="input2" id="7"></input>
-            <input type="text" className="input2" id="8"></input>
-            <input type="text" className="input2" id="9"></input>
-            <input type="text" className="input2" id="10"></input>
+            <input type="text" className="input" id="6" name="linha2"></input>
+            <input type="text" className="input" id="7" name="linha2"></input>
+            <input type="text" className="input" id="8" name="linha2"></input>
+            <input type="text" className="input" id="9" name="linha2"></input>
+            <input type="text" className="input" id="10" name="linha2"></input>
           </div>
 
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input3" id="11"></input>
-            <input type="text" className="input3" id="12"></input>
-            <input type="text" className="input3" id="13"></input>
-            <input type="text" className="input3" id="14"></input>
-            <input type="text" className="input3" id="15"></input>
+            <input type="text" className="input" id="11" name="linha3"></input>
+            <input type="text" className="input" id="12" name="linha3"></input>
+            <input type="text" className="input" id="13" name="linha3"></input>
+            <input type="text" className="input" id="14" name="linha3"></input>
+            <input type="text" className="input" id="15" name="linha3"></input>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input4" id="16"></input>
-            <input type="text" className="input4" id="17"></input>
-            <input type="text" className="input4" id="18"></input>
-            <input type="text" className="input4" id="19"></input>
-            <input type="text" className="input4" id="20"></input>
+            <input type="text" className="input" id="16" name="linha4"></input>
+            <input type="text" className="input" id="17" name="linha4"></input>
+            <input type="text" className="input" id="18" name="linha4"></input>
+            <input type="text" className="input" id="19" name="linha4"></input>
+            <input type="text" className="input" id="20" name="linha4"></input>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input5" id="21"></input>
-            <input type="text" className="input5" id="22"></input>
-            <input type="text" className="input5" id="23"></input>
-            <input type="text" className="input5" id="24"></input>
-            <input type="text" className="input5" id="25"></input>
+            <input type="text" className="input" id="21" name="linha5"></input>
+            <input type="text" className="input" id="22" name="linha5"></input>
+            <input type="text" className="input" id="23" name="linha5"></input>
+            <input type="text" className="input" id="24" name="linha5"></input>
+            <input type="text" className="input" id="25" name="linha5"></input>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input6" id="26"></input>
-            <input type="text" className="input6" id="27"></input>
-            <input type="text" className="input6" id="28"></input>
-            <input type="text" className="input6" id="29"></input>
-            <input type="text" className="input6" id="30"></input>
+            <input type="text" className="input" id="26" name="linha6"></input>
+            <input type="text" className="input" id="27" name="linha6"></input>
+            <input type="text" className="input" id="28" name="linha6"></input>
+            <input type="text" className="input" id="29" name="linha6"></input>
+            <input type="text" className="input" id="30" name="linha6"></input>
           </div>
           <div id="letter-area"></div>
         </div>
@@ -182,7 +208,6 @@ const App = () => {
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
     const s6 = document.getElementById("6");
-    const s10 = document.getElementById("10");
 
     if (
       palavraSorteada[0] !== s1.value.toUpperCase() &&
@@ -255,7 +280,7 @@ const App = () => {
       }
       setTimeout(sendMessage, 110);
     }
-    s10.focus();
+    s6.focus();
   }
 
   function secondLine() {
@@ -645,14 +670,14 @@ const App = () => {
   }
 
   function verificarLine() {
-    const valuesLine1 = document.getElementsByClassName("input1");
-    const valuesLine2 = document.getElementsByClassName("input2");
-    const valuesLine3 = document.getElementsByClassName("input3");
-    const valuesLine4 = document.getElementsByClassName("input4");
-    const valuesLine5 = document.getElementsByClassName("input5");
-    const valuesLine6 = document.getElementsByClassName("input6");
+    const valuesLine1 = document.getElementsByName("linha1");
+    const valuesLine2 = document.getElementsByName("linha2");
+    const valuesLine3 = document.getElementsByName("linha3");
+    const valuesLine4 = document.getElementsByName("linha4");
+    const valuesLine5 = document.getElementsByName("linha5");
+    const valuesLine6 = document.getElementsByName("linha6");
 
-    document.addEventListener("keypress", (event) => {
+    document.addEventListener("keyup", (event) => {
       var letra = event.key;
       if (letra === "Enter") {
         contador++;
@@ -663,7 +688,6 @@ const App = () => {
               if (valuesLine1[i] !== "") {
                 if (!onFunction) {
                   firstLine();
-
                   onFunction = true;
                 }
               }
@@ -735,22 +759,17 @@ const App = () => {
       }
     });
   }
-  // function passarInput() {
-  //   const valuesLine1 = document.getElementsByClassName("input1");
-  //   const valuesLine2 = document.getElementsByClassName("input2");
-  //   const valuesLine3 = document.getElementsByClassName("input3");
-  //   const valuesLine4 = document.getElementsByClassName("input4");
-  //   const valuesLine5 = document.getElementsByClassName("input5");
-  //   const valuesLine6 = document.getElementsByClassName("input6");
-  //   document.addEventListener("keyup", (event) => {
-  //     console.log(valuesLine1.length);
-  //     for (let i = 0; i < valuesLine1.length; i++) {
-  //       if (valuesLine1[i].value !== "" && i !== 4) {
-  //         valuesLine1[i + 1].focus();
-  //       }
-  //     }
-  //   });
-  // }
+  function passarInput() {
+    const valuesinput = document.getElementsByClassName("input");
+    document.addEventListener("keydown", (event) => {
+      console.log(valuesinput.length);
+      for (let i = 0; i < valuesinput.length; i++) {
+        if (valuesinput[i].value !== "") {
+          valuesinput[i + 1].focus();
+        }
+      }
+    });
+  }
 };
 
 export default App;
