@@ -208,56 +208,47 @@ const App = () => {
     const s4 = document.getElementById("4");
     const s5 = document.getElementById("5");
     const s6 = document.getElementById("6");
+    s1.value = s1.value.toUpperCase();
+    s2.value = s2.value.toUpperCase();
+    s3.value = s3.value.toUpperCase();
+    s4.value = s4.value.toUpperCase();
+    s5.value = s5.value.toUpperCase();
+    s6.value = s6.value.toUpperCase();
 
-    if (
-      palavraSorteada[0] !== s1.value.toUpperCase() &&
-      palavraSorteada.includes(s1.value.toUpperCase())
-    ) {
+    if (palavraSorteada[0] !== s1.value && palavraSorteada.includes(s1.value)) {
       s1.style.backgroundColor = "yellow";
-    } else if (s1.value.toUpperCase() === palavraSorteada[0]) {
+    } else if (s1.value === palavraSorteada[0]) {
       s1.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s1.value.toUpperCase())) {
+    } else if (!palavraSorteada.includes(s1.value)) {
       s1.style.backgroundColor = "red";
     }
 
-    if (
-      palavraSorteada[1] !== s2.value.toUpperCase() &&
-      palavraSorteada.includes(s2.value.toUpperCase())
-    ) {
+    if (palavraSorteada[1] !== s2.value && palavraSorteada.includes(s2.value)) {
       s2.style.backgroundColor = "yellow";
-    } else if (s2.value.toUpperCase() === palavraSorteada[1]) {
+    } else if (s2.value === palavraSorteada[1]) {
       s2.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s2.value.toUpperCase())) {
+    } else if (!palavraSorteada.includes(s2.value)) {
       s2.style.backgroundColor = "red";
     }
-    if (
-      palavraSorteada[2] !== s3.value.toUpperCase() &&
-      palavraSorteada.includes(s3.value.toUpperCase())
-    ) {
+    if (palavraSorteada[2] !== s3.value && palavraSorteada.includes(s3.value)) {
       s3.style.backgroundColor = "yellow";
-    } else if (s3.value.toUpperCase() === palavraSorteada[2]) {
+    } else if (s3.value === palavraSorteada[2]) {
       s3.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s3.value.toUpperCase())) {
+    } else if (!palavraSorteada.includes(s3.value)) {
       s3.style.backgroundColor = "red";
     }
-    if (
-      palavraSorteada[3] !== s4.value.toUpperCase() &&
-      palavraSorteada.includes(s4.value.toUpperCase())
-    ) {
+    if (palavraSorteada[3] !== s4.value && palavraSorteada.includes(s4.value)) {
       s4.style.backgroundColor = "yellow";
-    } else if (s4.value.toUpperCase() === palavraSorteada[3]) {
+    } else if (s4.value === palavraSorteada[3]) {
       s4.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s4.value.toUpperCase())) {
+    } else if (!palavraSorteada.includes(s4.value)) {
       s4.style.backgroundColor = "red";
     }
-    if (
-      palavraSorteada[4] !== s5.value.toUpperCase() &&
-      palavraSorteada.includes(s5.value.toUpperCase())
-    ) {
+    if (palavraSorteada[4] !== s5.value && palavraSorteada.includes(s5.value)) {
       s5.style.backgroundColor = "yellow";
-    } else if (s5.value.toUpperCase() === palavraSorteada[4]) {
+    } else if (s5.value === palavraSorteada[4]) {
       s5.style.backgroundColor = "green";
-    } else if (!palavraSorteada.includes(s5.value.toUpperCase())) {
+    } else if (!palavraSorteada.includes(s5.value)) {
       s5.style.backgroundColor = "red";
     }
     s1.readOnly = "readOnly";
@@ -267,11 +258,11 @@ const App = () => {
     s5.readOnly = "readOnly";
 
     if (
-      s1.value.toUpperCase() === palavraSorteada[0] &&
-      s2.value.toUpperCase() === palavraSorteada[1] &&
-      s3.value.toUpperCase() === palavraSorteada[2] &&
-      s4.value.toUpperCase() === palavraSorteada[3] &&
-      s5.value.toUpperCase() === palavraSorteada[4]
+      s1.value === palavraSorteada[0] &&
+      s2.value === palavraSorteada[1] &&
+      s3.value === palavraSorteada[2] &&
+      s4.value === palavraSorteada[3] &&
+      s5.value === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input1").length;
       for (let i = 0; i < valuesOne; i++) {
@@ -290,6 +281,12 @@ const App = () => {
     const s9 = document.getElementById("9");
     const s10 = document.getElementById("10");
     const s11 = document.getElementById("11");
+    s6.value = s6.value.toUpperCase();
+    s7.value = s7.value.toUpperCase();
+    s8.value = s8.value.toUpperCase();
+    s9.value = s9.value.toUpperCase();
+    s10.value = s10.value.toUpperCase();
+    s11.value = s11.value.toUpperCase();
 
     if (palavraSorteada[0] !== s6.value && palavraSorteada.includes(s6.value)) {
       s6.style.backgroundColor = "yellow";
@@ -358,6 +355,12 @@ const App = () => {
     const s14 = document.getElementById("14");
     const s15 = document.getElementById("15");
     const s16 = document.getElementById("16");
+    s11.value = s11.value.toUpperCase();
+    s12.value = s12.value.toUpperCase();
+    s13.value = s13.value.toUpperCase();
+    s14.value = s14.value.toUpperCase();
+    s15.value = s15.value.toUpperCase();
+    s16.value = s16.value.toUpperCase();
     if (
       palavraSorteada[0] !== s11.value &&
       palavraSorteada.includes(s11.value)
@@ -436,6 +439,12 @@ const App = () => {
     const s19 = document.getElementById("19");
     const s20 = document.getElementById("20");
     const s21 = document.getElementById("21");
+    s16.value = s16.value.toUpperCase();
+    s17.value = s17.value.toUpperCase();
+    s18.value = s18.value.toUpperCase();
+    s19.value = s19.value.toUpperCase();
+    s20.value = s20.value.toUpperCase();
+    s21.value = s21.value.toUpperCase();
     if (
       palavraSorteada[0] !== s16.value &&
       palavraSorteada.includes(s16.value)
@@ -514,6 +523,12 @@ const App = () => {
     const s24 = document.getElementById("24");
     const s25 = document.getElementById("25");
     const s26 = document.getElementById("26");
+    s21.value = s21.value.toUpperCase();
+    s22.value = s22.value.toUpperCase();
+    s23.value = s23.value.toUpperCase();
+    s24.value = s24.value.toUpperCase();
+    s25.value = s25.value.toUpperCase();
+    s26.value = s26.value.toUpperCase();
     if (
       palavraSorteada[0] !== s21.value &&
       palavraSorteada.includes(s21.value)
@@ -591,6 +606,11 @@ const App = () => {
     const s28 = document.getElementById("28");
     const s29 = document.getElementById("29");
     const s30 = document.getElementById("30");
+    s26.value = s26.value.toUpperCase();
+    s27.value = s27.value.toUpperCase();
+    s28.value = s28.value.toUpperCase();
+    s29.value = s29.value.toUpperCase();
+    s30.value = s30.value.toUpperCase();
     if (
       palavraSorteada[0] !== s26.value &&
       palavraSorteada.includes(s26.value)
