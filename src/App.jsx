@@ -336,11 +336,11 @@ const App = () => {
     s9.readOnly = "readOnly";
     s10.readOnly = "readOnly";
     if (
-      s6.value === palavraSorteada[0] &&
-      s7.value === palavraSorteada[1] &&
-      s8.value === palavraSorteada[2] &&
-      s9.value === palavraSorteada[3] &&
-      s10.value === palavraSorteada[4]
+      s6.value.toUpperCase() === palavraSorteada[0] &&
+      s7.value.toUpperCase() === palavraSorteada[1] &&
+      s8.value.toUpperCase() === palavraSorteada[2] &&
+      s9.value.toUpperCase() === palavraSorteada[3] &&
+      s10.value.toUpperCase() === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input2").length;
       for (let i = 0; i < valuesOne; i++) {
@@ -414,11 +414,11 @@ const App = () => {
     s14.readOnly = "readOnly";
     s15.readOnly = "readOnly";
     if (
-      s11.value === palavraSorteada[0] &&
-      s12.value === palavraSorteada[1] &&
-      s13.value === palavraSorteada[2] &&
-      s14.value === palavraSorteada[3] &&
-      s15.value === palavraSorteada[4]
+      s11.value.toUpperCase() === palavraSorteada[0] &&
+      s12.value.toUpperCase() === palavraSorteada[1] &&
+      s13.value.toUpperCase() === palavraSorteada[2] &&
+      s14.value.toUpperCase() === palavraSorteada[3] &&
+      s15.value.toUpperCase() === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input3").length;
       for (let i = 0; i < valuesOne; i++) {
@@ -492,11 +492,11 @@ const App = () => {
     s19.readOnly = "readOnly";
     s20.readOnly = "readOnly";
     if (
-      s16.value === palavraSorteada[0] &&
-      s17.value === palavraSorteada[1] &&
-      s18.value === palavraSorteada[2] &&
-      s19.value === palavraSorteada[3] &&
-      s20.value === palavraSorteada[4]
+      s16.value.toUpperCase() === palavraSorteada[0] &&
+      s17.value.toUpperCase() === palavraSorteada[1] &&
+      s18.value.toUpperCase() === palavraSorteada[2] &&
+      s19.value.toUpperCase() === palavraSorteada[3] &&
+      s20.value.toUpperCase() === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input4").length;
       for (let i = 0; i < valuesOne; i++) {
@@ -570,11 +570,11 @@ const App = () => {
     s24.readOnly = "readOnly";
     s25.readOnly = "readOnly";
     if (
-      s21.value === palavraSorteada[0] &&
-      s22.value === palavraSorteada[1] &&
-      s23.value === palavraSorteada[2] &&
-      s24.value === palavraSorteada[3] &&
-      s25.value === palavraSorteada[4]
+      s21.value.toUpperCase() === palavraSorteada[0] &&
+      s22.value.toUpperCase() === palavraSorteada[1] &&
+      s23.value.toUpperCase() === palavraSorteada[2] &&
+      s24.value.toUpperCase() === palavraSorteada[3] &&
+      s25.value.toUpperCase() === palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input5").length;
       for (let i = 0; i < valuesOne; i++) {
@@ -647,11 +647,11 @@ const App = () => {
     s29.readOnly = "readOnly";
     s30.readOnly = "readOnly";
     if (
-      s26.value !== palavraSorteada[0] &&
-      s27.value !== palavraSorteada[1] &&
-      s28.value !== palavraSorteada[2] &&
-      s29.value !== palavraSorteada[3] &&
-      s30.value !== palavraSorteada[4]
+      s26.value.toUpperCase() !== palavraSorteada[0] &&
+      s27.value.toUpperCase() !== palavraSorteada[1] &&
+      s28.value.toUpperCase() !== palavraSorteada[2] &&
+      s29.value.toUpperCase() !== palavraSorteada[3] &&
+      s30.value.toUpperCase() !== palavraSorteada[4]
     ) {
       let valuesOne = document.getElementsByClassName("input6").length;
       for (let i = 0; i < valuesOne; i++) {
