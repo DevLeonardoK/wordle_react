@@ -72,6 +72,64 @@ const App = () => {
     "vazio",
   ];
 
+  const keyUpper = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
+  const keyLower = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
+  ];
+
   //sorteio da palavra
   const sorteio = Math.floor(Math.random() * palavras.length); //valor unico ate recarregar
   const palavraSorteada = palavras[sorteio].toUpperCase().split("");
@@ -142,7 +200,13 @@ const App = () => {
             ></input>
           </div>
           <div className="row-area" style={styleRow}>
-            <input type="text" className="input" id="6" name="linha2"></input>
+            <input
+              type="text"
+              className="input"
+              id="6"
+              name="linha2"
+              maxLength={1}
+            ></input>
             <input type="text" className="input" id="7" name="linha2"></input>
             <input type="text" className="input" id="8" name="linha2"></input>
             <input type="text" className="input" id="9" name="linha2"></input>
@@ -783,7 +847,7 @@ const App = () => {
     const valuesinput = document.getElementsByClassName("input");
     document.addEventListener("keydown", (event) => {
       console.log(valuesinput.length);
-      for (let i = 0; i < valuesinput.length; i++) {
+      for (let i = 0; i < valuesinput.length - 1; i++) {
         if (valuesinput[i].value !== "") {
           valuesinput[i + 1].focus();
         }
